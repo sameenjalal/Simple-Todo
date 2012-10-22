@@ -1,10 +1,11 @@
-function show(req, res) {
+exports.show = function (req, res) {
   res.render('todo', {
-    title: "To-Do",
-    show: "SHOW THIS",
-    name: "Sameen",
-    hello: "DOES IT REALLY WORK?"
+    title: "To-Do App",
+    tasks: []
   });
 }
 
-exports.show = show;
+exports.add = function (req, res) {
+  res.contentType("json");
+  res.send({item: req.body.add_element});
+}
