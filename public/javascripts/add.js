@@ -7,7 +7,7 @@ $(function() {
       data: $(this).serialize(),
       success: function(response) {
         if (response.item.length > 0) {
-          $("<li>" + response.item + "</li>").hide().prependTo("#result_list").fadeIn(50);
+          $("<li>" + response.item + "</li>").hide().prependTo("#tasks_list").fadeIn(50);
         }
       },
       failure: function() {
