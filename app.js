@@ -8,7 +8,7 @@ var express = require('express')
   , user = require('./routes/user')
   , http = require('http')
   , path = require('path')
-  , todo = require('./routes/todo');
+  , search = require('./routes/search');
 
 var app = express();
 
@@ -30,8 +30,8 @@ app.configure('development', function(){
 
 app.get('/', routes.index);
 app.get('/users', user.list);
-app.get('/todo', todo.show);
-app.post('/add', todo.add);
+app.get('/search', search.show);
+app.post('/add', search.add);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
